@@ -1,0 +1,27 @@
+--create record store table
+
+create table record_shop (id INTEGER PRIMARY KEY, record_name TEXT, quantity_sold INTEGER, sale_price INTEGER, aisle INTEGER);
+
+INSERT INTO record_shop VALUES (1, "LOUDER THAN BOMBS", 350, 25, 5);
+INSERT INTO record_shop VALUES (2, "THE SMITHS", 833, 31, 12);
+INSERT INTO record_shop VALUES (3, "THE QUEEN IS DEAD", 5531, 20, 3);
+INSERT INTO record_shop VALUES (4, "STRANGEWAYS", 8800, 20, 5);
+INSERT INTO record_shop VALUES (5, "MEAT IS MURDER", 751, 25, 3);
+INSERT INTO record_shop VALUES (6, "VIVA HATE", 7555, 20, 8);
+INSERT INTO record_shop VALUES (7, "BONA DRAG", 10000, 15, 8);
+INSERT INTO record_shop VALUES (8, "KILL UNCLE", 25000, 15, 12);
+INSERT INTO record_shop VALUES (9, "YOUR ARSENAL", 20000, 17, 12);
+INSERT INTO record_shop VALUES (10, "BEETHOVEN", 8000, 20, 11);
+INSERT INTO record_shop VALUES (11, "SOUTHPAW", 533, 20, 11);
+INSERT INTO record_shop VALUES (12, "RINGLEADER", 400, 25, 10);
+INSERT INTO record_shop VALUES (13, "TEENAGERS", 350, 30, 10);
+INSERT INTO record_shop VALUES (14, "BEST OF", 900, 30, 5);
+INSERT INTO record_shop VALUES (15, "HATFUL OF HOLLOW", 750, 25, 5);
+
+--display all records at the record shop with all fields
+
+SELECT * FROM record_shop;
+
+--display all records with price where the aisle number is greater than 9 and sort by sales price in descending order
+
+SELECT record_name,sale_price from record_shop  where aisle > 9 group by record_name order by sale_price desc
