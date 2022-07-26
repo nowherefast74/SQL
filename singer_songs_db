@@ -1,0 +1,38 @@
+/* Create table about the people and what they do here */
+
+create table music_singers (id INTEGER PRIMARY KEY, singer TEXT);
+
+insert into music_singers values (1, "Morrissey");
+insert into music_singers values (2, "Suede");
+insert into music_singers values (3, "Queen");
+insert into music_singers values (4, "The Cure");
+insert into music_singers values (5, "Depeche Mode");
+
+select * from music_singers;
+
+create table singer_songs (id INTEGER PRIMARY KEY, song TEXT, singer_id INTEGER);
+
+insert into singer_songs values (1, "Suedehead",1);
+insert into singer_songs values (2, "The Next Life", 2);
+insert into singer_songs values (3, "We Are The Champions",3);
+insert into singer_songs values (4, "Friday",4);
+insert into singer_songs values (5, "Master And Servant",5);
+
+select * from singer_songs;
+
+create table singer_birthplace (id INTEGER PRIMARY KEY, birthplace TEXT, singer_id INTEGER);
+
+insert into singer_birthplace values (1, "Manchester",1);
+insert into singer_birthplace values (2, "England",2);
+insert into singer_birthplace values (3, "Overton",3);
+insert into singer_birthplace values (4, "Chicago",4);
+insert into singer_birthplace values (5, "Blocktenburgh",5);
+
+select * from singer_birthplace;
+
+select music_singers.singer, singer_songs.song, singer_birthplace.birthplace
+from music_singers
+join singer_songs
+on music_singers.id = singer_songs.singer_id
+join singer_birthplace
+on music_singers.id = singer_birthplace.singer_id;
