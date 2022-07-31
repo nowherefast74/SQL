@@ -51,3 +51,11 @@ from FebSales Feb
 left join customers cust
 on feb.orderid=cust.order_id
 where feb.quantity>2;
+
+--8 - List all the products sold in Los Angeles in February, and include how manyu of each were sold
+
+select product, sum(quantity)
+from bit_db.febsales
+where location like '%Los Angeles%'
+group by product;
+
